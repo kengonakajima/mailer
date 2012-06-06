@@ -5,7 +5,7 @@ require "rubygems"
 require "webrick"
 require "./rumino/rumino"
 
-PORT = 10080
+PORT = 38080
 PIDFILE = nil
 EMAILTO = "kengo.nakajima@gmail.com"
 
