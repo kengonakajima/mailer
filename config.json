@@ -1,0 +1,10 @@
+{
+    "name": "mailer",
+    "skip": [  ],
+    "workdir" : "",
+    "procs": {
+      "main": {
+        "exec": "web.rb"                    
+      }
+    }
+}
