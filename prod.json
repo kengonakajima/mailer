@@ -1,4 +1,3 @@
 {
-    "webPort":38080,
-    "pidFile":"/var/run/mailer-prod.pid"
+    "webPort":38080
 }

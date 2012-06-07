@@ -1,0 +1,5 @@
+{
+    "webPort":38080,
+    "pidFile":"/tmp/mailer-debug.pid",
+    "bindAddress":"0.0.0.0"
+}
