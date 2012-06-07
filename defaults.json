@@ -1,5 +1,7 @@
 {
     "webPort":38080,
     "pidFile":"/tmp/mailer-debug.pid",
+    "emailTo":"kengo.nakajima@gmail.com",
+    "emailFromDomain":"ringo.io",
     "bindAddress":"0.0.0.0"
 }

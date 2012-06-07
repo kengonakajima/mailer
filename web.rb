@@ -5,12 +5,17 @@ require "rubygems"
 require "webrick"
 require "./rumino/rumino"
 
-EMAILTO = "kengo.nakajima@gmail.com"
+
+
+conf = mergeJSONs( "defaults.json", ARGV[0] )
+
+raise "need 'emailTo' in config" if ! conf["emailTo"]
+raise "need 'emailFromDomain' in config" if ! conf["emailFromDomain"]
 
 $hist={}
 
 web = MiniWeb.new()
-web.useConfJSONs( "defaults.json", ARGV[0] )
+web.configure(conf)
 web.useGlobalTrapAndPidFile()
 web.onPOST() do |req,res|
   caption = req.path
@@ -21,9 +26,9 @@ web.onPOST() do |req,res|
   p( caption )
   p( data )
   if ! $hist[data] then
-    from = caption + "@ringo.io"         # URL path is used as mail subject and from address.
+    from = caption + "@" + conf["emailFromDomain"]         # URL path is used as mail subject and from address.
     subj = caption
-    sendmail( from, EMAILTO, subj, data )      
+    sendmail( from, conf["emailTo"], subj, data )      
   else
     p("skip dup entry")
   end
