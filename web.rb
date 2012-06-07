@@ -1,11 +1,7 @@
 #!/usr/bin/ruby
 # http to smtp mailer
 #
-require "rubygems"
-require "webrick"
 require "./rumino/rumino"
-
-
 
 conf = mergeJSONs( "defaults.json", ARGV[0] )
 
