@@ -25,8 +25,10 @@ web.onPOST() do |req,res|
     from = caption + "@" + conf["emailFromDomain"]         # URL path is used as mail subject and from address.
     subj = caption
     sendmail( from, conf["emailTo"], subj, data )      
+    res.sendJSON({"result"=>"sent"})
   else
     p("skip dup entry")
+    res.sendJSON({"result"=>"skipped"})
   end
 end
 
