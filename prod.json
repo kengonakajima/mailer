@@ -1,3 +1,7 @@
 {
-    "webPort":38080
+    "webPort":38080,
+    "test": {
+        "command" : "curl -s -d message_should_be_sent http://localhost:38080/mailer_test",
+        "expect" : "{\"result\":\"sent\"}"
+    }
 }
