@@ -1,6 +1,6 @@
 [submodule "rel"]
 	path = rel
-	url = https://kengonakajima@github.com/kengonakajima/rel
+	url = git@github.com:kengonakajima/rel.git
 [submodule "rumino"]
 	path = rumino
-	url = https://github.com/kengonakajima/rumino
+	url = git@github.com:kengonakajima/rumino.git
